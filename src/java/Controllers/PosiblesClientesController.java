@@ -79,6 +79,10 @@ public class PosiblesClientesController extends HttpServlet {
             if (request.getParameter("txtTelefono") != null) {
                 obclsPosiblesClientes.setStTelefono(request.getParameter("txtTelefono"));
             }
+            if (request.getParameter("txtFax") != null) {
+                obclsPosiblesClientes.setStFax(request.getParameter("txtFax"));
+            }
+            
             if (request.getParameter("txtMovil") != null) {
                 obclsPosiblesClientes.setStMovil(request.getParameter("txtMovil"));
             }

@@ -12,6 +12,15 @@ package Models;
 public class clsPosiblesClientes {
     
     //ATRIBUTOS O PROPIEDADES 
+    public int inCodigo;
+
+    public int getInCodigo() {
+        return inCodigo;
+    }
+
+    public void setInCodigo(int inCodigo) {
+        this.inCodigo = inCodigo;
+    }
     public String stEmpresa;
     public String stNombre;
     public String stApellidos;
@@ -157,7 +166,7 @@ public class clsPosiblesClientes {
         this.obclsCalificacion = obclsCalificacion;
     }
 
-    public char isChNoParticipacionCorreoElectronico() {
+    public char getChNoParticipacionCorreoElectronico() {
         return chNoParticipacionCorreoElectronico;
     }
 
