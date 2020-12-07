@@ -10,6 +10,8 @@ package Models;
  * @author Sebastian
  */
 public class clsPosiblesClientes {
+    
+    //ATRIBUTOS O PROPIEDADES 
     public String stEmpresa;
     public String stNombre;
     public String stApellidos;
@@ -21,14 +23,19 @@ public class clsPosiblesClientes {
     public String stSitioWeb;
     public clsFuentePosibleCliente obclsFuentePosibleCliente;
     public clsEstadoPosibleCliente obclsEstadoPosibleCliente;
-    public clsSector obcclsSector;
+    public clsSector obclsSector;
     public int inCantidadEmpleados;
     public double dbIngresosAnuales;
     public clsCalificacion obclsCalificacion;
-    public boolean blNoParticipacionCorreoElectronico;
+    public char chNoParticipacionCorreoElectronico;
     public String stIDSkype;
     public String stTwittir;
     public String stCorreoElectronicoSegundario;
+    
+    /**
+     *
+     * @return
+     */
 
     public String getStEmpresa() {
         return stEmpresa;
@@ -118,12 +125,12 @@ public class clsPosiblesClientes {
         this.obclsEstadoPosibleCliente = obclsEstadoPosibleCliente;
     }
 
-    public clsSector getObcclsSector() {
-        return obcclsSector;
+    public clsSector getObclsSector() {
+        return obclsSector;
     }
-
-    public void setObcclsSector(clsSector obcclsSector) {
-        this.obcclsSector = obcclsSector;
+    
+    public void setObclsSector(clsSector obclsSector) {
+        this.obclsSector = obclsSector;
     }
 
     public int getInCantidadEmpleados() {
@@ -150,12 +157,12 @@ public class clsPosiblesClientes {
         this.obclsCalificacion = obclsCalificacion;
     }
 
-    public boolean isBlNoParticipacionCorreoElectronico() {
-        return blNoParticipacionCorreoElectronico;
+    public char isChNoParticipacionCorreoElectronico() {
+        return chNoParticipacionCorreoElectronico;
     }
 
-    public void setBlNoParticipacionCorreoElectronico(boolean blNoParticipacionCorreoElectronico) {
-        this.blNoParticipacionCorreoElectronico = blNoParticipacionCorreoElectronico;
+    public void setChNoParticipacionCorreoElectronico(char chNoParticipacionCorreoElectronico) {
+        this.chNoParticipacionCorreoElectronico = chNoParticipacionCorreoElectronico;
     }
 
     public String getStIDSkype() {
@@ -180,5 +187,11 @@ public class clsPosiblesClientes {
 
     public void setStCorreoElectronicoSegundario(String stCorreoElectronicoSegundario) {
         this.stCorreoElectronicoSegundario = stCorreoElectronicoSegundario;
+    }
+
+    private static class clsSector {
+
+        public clsSector() {
+        }
     }
 }

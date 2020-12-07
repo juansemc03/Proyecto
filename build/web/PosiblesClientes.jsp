@@ -112,7 +112,7 @@
                                 <div class="col-md-3">
                                     <label name="lblFuentePosibleCliente">Fuente De Posible Cliente:</label>
                                     <select class="form-control" name="ddlFuentePosibleCliente">
-                                        <option select="true" value="1">None</option>
+                                        <option select="true" value="1">Ninguno</option>
                                         <option value="2">Aviso</option>
                                         <option value="3">Llamada No Solicitada</option>
                                         <option value="4">Recomendacion De Empleado</option>
@@ -123,7 +123,7 @@
                                 <div class="col-md-3">
                                     <label name="lblEstadoPosibleCliente">Estado De Posible Cliente:</label>
                                     <select class="form-control" name="ddlEstadoPosibleCliente">
-                                        <option select="true" value="1">None</option>
+                                        <option select="true" value="1">Ninguno</option>
                                         <option value="2">Intento De Contacto</option>
                                         <option value="3">Contactar En El Futuro</option>
                                         <option value="4">Contactado</option>
@@ -134,7 +134,7 @@
                                 <div class="col-md-3">
                                     <label name="lblSector">Sector:</label>
                                     <select class="form-control" name="ddlSector">
-                                        <option select="true" value="1">None</option>
+                                        <option select="true" value="1">Ninguno</option>
                                         <option value="2">APS(Provedor de Servicios de Aplicacion)</option>
                                         <option value="3">OEM de Datos</option>
                                         <option value="4">ERP(Planificacion de Recursos de Empresa)</option>
@@ -160,7 +160,7 @@
                                 <div class="col-md-3">
                                     <label name="lblCalificacion">Calificacion:</label>
                                     <select class="form-control" name="ddlCalificacion">
-                                        <option select="true" value="1">None</option>
+                                        <option select="true" value="1">Ninguno</option>
                                         <option value="2">Adquirido</option>
                                         <option value="3">Activo</option>
                                         <option value="4">Contactado</option>

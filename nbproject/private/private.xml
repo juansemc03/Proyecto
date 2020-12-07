@@ -3,12 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Models/clsLogin.java</file>
-            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/web/Registrar.jsp</file>
+            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Models/clsSector.java</file>
             <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/web/PosiblesClientes.jsp</file>
+            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Models/clsEstadoPosibleCliente.java</file>
             <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/web/Index.jsp</file>
             <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/web/Login.jsp</file>
             <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Controllers/LoginController.java</file>
+            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Models/clsLogin.java</file>
+            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Models/clsCalificacion.java</file>
+            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Models/clsPosiblesClientes.java</file>
+            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Controllers/PosiblesClientesController.java</file>
+            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/web/Registrar.jsp</file>
+            <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/Models/clsFuentePosibleCliente.java</file>
             <file>file:/C:/Users/Sebastian/Documents/NetBeansProjects/Proyecto/src/java/BL/clsLogin.java</file>
         </group>
     </open-files>
