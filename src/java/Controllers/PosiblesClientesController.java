@@ -44,7 +44,82 @@ public class PosiblesClientesController extends HttpServlet {
 
         } else if (request.getParameter("btnCancelar") != null) {
 
+        } else if (request.getParameter("codigoSeleccionado") != null) {
+            if (request.getParameter("stOpcion").equals("M")) {
+                cargarModificar(request, response);
+            } else if (request.getParameter("stOpcion").equals("E")) {
+                btnEliminar(request, response);
+            }
+
         }
+    }
+
+    public void btnEliminar(HttpServletRequest request, HttpServletResponse reponse) throws IOException, ServletException {
+        try {
+            //MODELO SOBRE EL QUE ESTAMOS TRABAJANDO
+            Models.clsPosiblesClientes obclsPosiblesClientes = new Models.clsPosiblesClientes();
+            //LISTA DE OBJETOS DONDE ESTA LA INFORMACION GUARDADA
+            List<Models.clsPosiblesClientes> lstclsPosiblesClientes = new ArrayList<Models.clsPosiblesClientes>();
+            List<Models.clsPosiblesClientes> lstclsPosiblesClientesNueva = new ArrayList<Models.clsPosiblesClientes>();
+
+            HttpSession session = request.getSession(true);
+
+            if (session.getAttribute("session_lstclsPosiblesClientes") != null) {
+                lstclsPosiblesClientes = (List<Models.clsPosiblesClientes>) session.getAttribute("session_lstclsPosiblesClientes");
+                lstclsPosiblesClientesNueva = lstclsPosiblesClientes;
+            }
+            
+            for (Models.clsPosiblesClientes item : lstclsPosiblesClientes) {
+                if (item.getInCodigo() == Integer.parseInt(request.getParameter("codigoSeleccionado"))) {
+                    obclsPosiblesClientes = item;
+                    lstclsPosiblesClientesNueva.remove(item);
+                    break;
+                }
+            }
+            
+            session.setAttribute("session_lstclsPosiblesClientes", lstclsPosiblesClientes);
+            request.setAttribute("stTipo", "success");
+            request.setAttribute("stMensaje", "Se realizo proceso con exito.");
+            request.getRequestDispatcher("PosiblesClientes.jsp").forward(request, reponse);
+   
+        } catch (Exception ex) {
+            request.setAttribute("stTipo", "error");
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.getRequestDispatcher("PosiblesClientes.jsp").forward(request, reponse);
+
+        }
+
+    }
+
+    public void cargarModificar(HttpServletRequest request, HttpServletResponse reponse) throws IOException, ServletException {
+        try {
+            //MODELO SOBRE EL QUE ESTAMOS TRABAJANDO
+            Models.clsPosiblesClientes obclsPosiblesClientes = new Models.clsPosiblesClientes();
+            //LISTA DE OBJETOS DONDE ESTA LA INFORMACION GUARDADA
+            List<Models.clsPosiblesClientes> lstclsPosiblesClientes = new ArrayList<Models.clsPosiblesClientes>();
+
+            HttpSession session = request.getSession(true);
+
+            if (session.getAttribute("session_lstclsPosiblesClientes") != null) {
+                lstclsPosiblesClientes = (List<Models.clsPosiblesClientes>) session.getAttribute("session_lstclsPosiblesClientes");
+            }
+
+            for (Models.clsPosiblesClientes item : lstclsPosiblesClientes) {
+                if (item.getInCodigo() == Integer.parseInt(request.getParameter("codigoSeleccionado"))) {
+                    obclsPosiblesClientes = item;
+                }
+            }
+
+            request.setAttribute("obclsPosiblesClientes", obclsPosiblesClientes);
+            request.getRequestDispatcher("PosiblesClientes.jsp").forward(request, reponse);
+
+        } catch (Exception ex) {
+
+            request.setAttribute("stTipo", "error");
+            request.setAttribute("stMensaje", ex.getMessage());
+            request.getRequestDispatcher("PosiblesClientes.jsp").forward(request, reponse);
+        }
+
     }
 
     public void btnGuardar(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -56,7 +131,7 @@ public class PosiblesClientesController extends HttpServlet {
 
             Models.clsFuentePosibleCliente obclsFuentePosibleCliente = new Models.clsFuentePosibleCliente();
             Models.clsEstadoPosibleCliente obclsEstadoPosibleCliente = new Models.clsEstadoPosibleCliente();
-            Models.clsSector obcSector = new Models.clsSector();
+            Models.clsSector obclsSector = new Models.clsSector();
             Models.clsCalificacion obclsCalificacion = new Models.clsCalificacion();
 
             //ASIGNACION DE ATRIBUTOS O PROPIEDADES
@@ -82,7 +157,7 @@ public class PosiblesClientesController extends HttpServlet {
             if (request.getParameter("txtFax") != null) {
                 obclsPosiblesClientes.setStFax(request.getParameter("txtFax"));
             }
-            
+
             if (request.getParameter("txtMovil") != null) {
                 obclsPosiblesClientes.setStMovil(request.getParameter("txtMovil"));
             }
@@ -161,7 +236,7 @@ public class PosiblesClientesController extends HttpServlet {
                     stDescripcion = "Empresa Grande";
                 }
 
-                obcSector.setStDescripcion(stDescripcion);
+                obclsSector.setStDescripcion(stDescripcion);
 
                 obclsSector.setInCodigo(Integer.parseInt(request.getParameter("ddlSector")));
             }
@@ -206,7 +281,10 @@ public class PosiblesClientesController extends HttpServlet {
                         ? 'S' : 'N';
 
                 obclsPosiblesClientes.setChNoParticipacionCorreoElectronico(chSeleccion);
+            } else {
+                obclsPosiblesClientes.setChNoParticipacionCorreoElectronico('N');
             }
+
             if (request.getParameter("txtIDSkype") != null) {
                 obclsPosiblesClientes.setStIDSkype(request.getParameter("txtIDSkype"));
             }
@@ -291,21 +369,5 @@ public class PosiblesClientesController extends HttpServlet {
     public String getServletInfo() {
         return "Short description";
     }// </editor-fold>
-
-    private static class obclsPosiblesClientes {
-
-        public obclsPosiblesClientes() {
-        }
-    }
-
-    private static class obclsSector {
-
-        private static void setInCodigo(int parseInt) {
-            throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-        }
-
-        public obclsSector() {
-        }
-    }
 
 }
